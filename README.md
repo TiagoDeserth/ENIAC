@@ -1,15 +1,13 @@
 # Unknown Rate (%) at Selected Evaluation Moments
 
+> **Supplementary material** for the paper *Active Adaptation for Novelty Detection in Data Streams with Extreme Latency Using Fuzzy Micro-Clusters*. This file contains the full Unknown Rate results omitted from the main text for space reasons.
+
+## Overview
+
+The unknown rate follows the same overall pattern across both datasets: a relatively high value at the first evaluation moment, reflecting the classifier's warm-up phase, followed by rapid convergence to values below 0.5% once the model has processed enough instances. The magnitude of the initial unknown rate is dataset-dependent — SyneDC (up to 12.79%) and RBF (up to 3.10%) — but the windowing mechanism does not introduce a systematic increase or decrease relative to the baseline once steady-state is reached. This indicates that the gains in classification quality observed for RBF and SyneDC do not come at the cost of higher instance rejection.
+
 ## RBF Dataset
-The unknown rate follows the same overall pattern across both datasets:
-a relatively high value at the first evaluation moment, reflecting the
-classifier's warm-up phase, followed by rapid convergence to values
-below 0.5% once the model has processed enough instances. The magnitude
-of the initial unknown rate is dataset-dependent — SyneDC (up to 12.79%)
-and RBF (up to 3.10%) — but the windowing mechanism does not introduce
-a systematic increase or decrease relative to the baseline once
-steady-state is reached. This indicates that the gains in classification
-quality do not come at the cost of higher instance rejection.
+
 | Moment | w=1 up=1.0 | w=40 up=1.0 | w=40 up=0.8 | w=40 up=0.5 | w=80 up=1.0 | w=80 up=0.8 | w=80 up=0.5 | w=200 up=1.0 | w=200 up=0.8 | w=200 up=0.5 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1  | 3.10 | 3.10 | 3.10 | 2.00 | 2.90 | 2.10 | 2.20 | 2.60 | 3.10 | 3.00 |
@@ -24,6 +22,8 @@ quality do not come at the cost of higher instance rejection.
 | 45 | 0.07 | 0.12 | 0.08 | 0.11 | 0.11 | 0.06 | 0.10 | 0.08 | 0.14 | 0.08 |
 
 ## SyneDC Dataset
+
+The SyneDC dataset presents a higher initial unknown rate (up to 12.79% at moment 1) compared to RBF, reflecting its larger number of known classes (20) and higher dimensionality (54 attributes). As with RBF, all configurations converge to values below 0.5% after the warm-up phase, with no systematic difference introduced by the windowing mechanism.
 
 | Moment | w=1 up=1.0 | w=40 up=1.0 | w=40 up=0.8 | w=40 up=0.5 | w=80 up=1.0 | w=80 up=0.8 | w=80 up=0.5 | w=200 up=1.0 | w=200 up=0.8 | w=200 up=0.5 |
 |---|---|---|---|---|---|---|---|---|---|---|
