@@ -1,7 +1,15 @@
 # Unknown Rate (%) at Selected Evaluation Moments
 
 ## RBF Dataset
-
+The unknown rate follows the same overall pattern across both datasets:
+a relatively high value at the first evaluation moment, reflecting the
+classifier's warm-up phase, followed by rapid convergence to values
+below 0.5% once the model has processed enough instances. The magnitude
+of the initial unknown rate is dataset-dependent — SyneDC (up to 12.79%)
+and RBF (up to 3.10%) — but the windowing mechanism does not introduce
+a systematic increase or decrease relative to the baseline once
+steady-state is reached. This indicates that the gains in classification
+quality do not come at the cost of higher instance rejection.
 | Moment | w=1 up=1.0 | w=40 up=1.0 | w=40 up=0.8 | w=40 up=0.5 | w=80 up=1.0 | w=80 up=0.8 | w=80 up=0.5 | w=200 up=1.0 | w=200 up=0.8 | w=200 up=0.5 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1  | 3.10 | 3.10 | 3.10 | 2.00 | 2.90 | 2.10 | 2.20 | 2.60 | 3.10 | 3.00 |
